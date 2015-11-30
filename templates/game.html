@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <title>Boardgames Recommender</title>
+  <meta content="" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <link href="apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Place favicon.ico in the root directory -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/assets/js/vendor/modernizr-2.8.3.min.js">
+  </script>
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap-rating.css" rel="stylesheet">
+
+</head>
+<body>
+  <!--[if lt IE 8]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <!-- Add your site or application content here -->
+  {{ with .game }}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <b style="font-size:1.5em;">
+          {{ .Title }}
+        </b><br/>
+        <input id="rating" type="hidden" class="rating"
+        data-filled="glyphicon glyphicon-star star" data-empty="glyphicon glyphicon-star-empty"
+        data-readonly data-start="0" data-stop="10" data-step="0.5" data-value="{{ .Rating }}" />
+
+        <span>{{ .Rating }}/10 ({{ .NumRatings }} ratings)</span>
+
+
+        <img src="{{ .Thumbnail }}" class="center-block"/><br/>
+      </div>
+    </div>
+
+    <table class="table table-striped">
+      <tr>
+        <td>
+          <b>Designer</b><br/>
+          <p>{{ .Designer }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Play Time</b><br/>
+          <p>{{ .Minplaytime }} to {{ .Maxplaytime }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Honors</b><br/>
+          <p>{{ .Honors }}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <b>Description</b><br/>
+          <p id="description">{{ .Description }}</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  {{ end }}
+
+  {{ with .related }}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <b style="font-size:1.5em;">
+          User likes this game also like
+        </b>
+      </div>
+    </div>
+
+    <table class="table table-striped">
+      {{ range $index, $game := .}}
+      <tr>
+        <td>
+          <a href="/game/{{ $game.ID }}">
+            <img src={{ $game.Thumbnail }} style="width:80px; height:80px;"/>
+          </a>
+        </td>
+        <td>
+          <a href="/game/{{ $game.ID }}"><b>{{ $game.Title }}</b></a><br/>
+          <input id="rating" type="hidden" class="rating"
+          data-filled="glyphicon glyphicon-star star" data-empty="glyphicon glyphicon-star-empty"
+          data-readonly data-start="0" data-stop="10" data-step="0.5" data-value="{{ $game.Rating }}" />
+          <span>({{ $game.Rating }}/10)</span>
+          <p>{{ $game.NumRatings }} ratings</p>
+        </td>
+      </tr>
+      {{ end }}
+    </table>
+  </div>
+  {{ end }}
+
+  {{ with .ratings }}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <b style="font-size:1.5em;">
+          User Reviews
+        </b>
+      </div>
+    </div>
+
+    <table class="table table-striped">
+      {{ range $index, $rating := .}}
+      <tr>
+        <td>
+          <b>{{ $rating.User.Username }}</b><br/>
+          <input id="rating" type="hidden" class="rating"
+          data-filled="glyphicon glyphicon-star star" data-empty="glyphicon glyphicon-star-empty"
+          data-readonly data-start="0" data-stop="10" data-step="0.5" data-value="{{ $rating.Value }}" />
+          <span>({{ $rating.Value }}/10)</span>
+          <p>{{ $rating.Comment }}</p>
+        </td>
+      </tr>
+      {{ end }}
+    </table>
+  </div>
+  {{ end }}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+  <script src="/assets/js/plugins.js"></script> <!-- Core JS file -->
+  <script src="/assets/js/vendor/bootstrap.min.js" type="text/javascript"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/vendor/bootstrap-rating.min.js"></script>
+  <script src="/assets/js/vendor/readmore.min.js"></script>
+  <script>
+  $(document).ready(function(){
+
+    var ratingEls = $('.rating');
+    console.log(ratingEls);
+    $.each(ratingEls, function(index, el) {
+      var $el = $(el);
+      var rating = $el.attr("data-value");
+      console.log("rating " + rating);
+      var floor = Math.floor(rating);
+      if (rating != floor) {
+        rating = floor + 0.5;
+      }
+      $el.rating("rate", rating);
+    });
+
+    $("#description").readmore({
+      collapsedHeight: 80
+    });
+  });
+  </script>
+</body>
+</html>

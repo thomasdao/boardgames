@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>http://www.elegantchart.com</loc>
+    <video:video>
+      <video:content_loc>
+        http://www.elegantchart.com/video/demo.mp4
+      </video:content_loc>
+      <video:thumbnail_loc>
+        http://www.elegantchart.com/video/demo_thumbnail.png
+      </video:thumbnail_loc>
+      <video:title>Elegant Chart - Create beautiful and professional charts in Excel in less than 1 minute!</video:title>
+      <video:description>
+        Simple 3 steps to create a beautiful chart: copy and paste your data, choose highlight colors and customize the final chart.
+      </video:description>
+      <video:duration>
+        40
+      </video:duration>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>http://www.elegantchart.com/collection</loc>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/1a.png</image:loc>
+      <image:title>Revenue Column Chart</image:title>
+      <image:caption>A Column Chart showing progression of revenue. It is ideal to show the progress of financial value over time, such as profit, revenue or cost. It is clear to for users to see and make comparison.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/1b.png</image:loc>
+      <image:title>Net Growth by Region Donut Chart</image:title>
+      <image:caption>A Donut Chart showing Net growth by region. A donut chart is a modification of pie chart with a hole in the centre. Here each region is a sector of the donut chart. All sectors make up the whole circle. You can choose a sector to highlight.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/1c.png</image:loc>
+      <image:title>Survey Bar Chart</image:title>
+      <image:caption>A Bar Chart showing survey data. Neat and cool way of showing survey result</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/2a.png</image:loc>
+      <image:title>Earnings and Dividends Stacked Line Chart</image:title>
+      <image:caption>A Stacked Line chart showing Earnings and Dividend’s per share. Can be drawn with or without secondary axis. To show relating data in a single chart. Good for audience to make comparison and see both data at the same time.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/2b.png</image:loc>
+      <image:title>Customer Satisfaction Pie Chart</image:title>
+      <image:caption>A Pie Chart showing a breakdown of customer satisfaction or feedback with highlighted, exploded pie to highlight the area user choose to.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/2c.png</image:loc>
+      <image:title>Site Traffic Area Chart</image:title>
+      <image:caption>An Area Chart to show the progress  of site traffic over time. 2 data are being presented: Number of visits and unique visitors. It’s best to use if 2 data are not overlapping and when you have a story of improvement to tell</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/3a.png</image:loc>
+      <image:title>Cost Breakdown Stacked Column Chart</image:title>
+      <image:caption>A Stacked Column Chart to show comparison of cost breakdown over 2 years, at the same time showing its breakdown</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/3b.png</image:loc>
+      <image:title>Customer Ratings Column Chart</image:title>
+      <image:caption>A Column Chart showing customer rating of different categories: product, price, delivery and service. Each column is of different color, good to present data of different category.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/3c.png</image:loc>
+      <image:title>Student Enrolment Clustered Bar Chart</image:title>
+      <image:caption>A clustered bar chart showing student enrolment data, with differentiation of local and international student. Good to show comparison both over the year and between local and international students. This chart can also be used to present financial data, such as revenue and cost/profit etc</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/4a.png</image:loc>
+      <image:title>Dotted Column Chart</image:title>
+      <image:caption>A mixed chart of column and dot showing stakeholders’ funds and ROE information</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/4b.png</image:loc>
+      <image:title>Mixed Column and Line Chart</image:title>
+      <image:caption>A mixed chart of column and line charts showing revenue and profit over the year. Line  chart is ideal to showing the trending.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/4c.png</image:loc>
+      <image:title>Customer Complaint Trend Stacked Line Chart</image:title>
+      <image:caption>A stacked line chart showing the trending of customer complaints over the time, with comparison to previous year</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/5a.png</image:loc>
+      <image:title>Customer Queries Bar Chart</image:title>
+      <image:caption>A bar chart showing customer queries over time. Data labels are included for easy reference.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/5b.png</image:loc>
+      <image:title>Contest Participants Donut Chart</image:title>
+      <image:caption>A donut chart showing contest participants. The area in the middle of the donut can be used to show the total number of participants.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/5c.png</image:loc>
+      <image:title>Budget Breakdown Pie Chart</image:title>
+      <image:caption>A pie chart showing budget breakdown, with vibrant color, and percentages of each sectors</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/6a.png</image:loc>
+      <image:title>Progress Completion Donut Chart</image:title>
+      <image:caption>A donut chart showing the progress of completion of a project</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/6b.png</image:loc>
+      <image:title>Customer By Region Donut Chart</image:title>
+      <image:caption>A donut chart showing the breakdown of client by region, with percentage shown for each sector</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://www.elegantchart.com/img/6c.png</image:loc>
+      <image:title>Market Share Pie Chart</image:title>
+      <image:caption>A pie chart showing the breakdown of market share. With data label include both value and percentage. Ideal when there are many category and easier for use to refer.</image:caption>
+    </image:image>
+  </url>
+</urlset>

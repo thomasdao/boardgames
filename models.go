@@ -1,4 +1,4 @@
-package boardgames
+package main
 
 import "time"
 
@@ -33,9 +33,9 @@ type Game struct {
 type Rating struct {
 	ID        int64
 	UserID    int64 `sql:"index:ix_ratings_user_id"`
-	User      User
+	User      *User
 	GameID    int64 `sql:"index:ix_ratings_game_id"`
-	Game      Game
+	Game      *Game
 	Comment   string
 	Value     float64   `sql:"index:ix_ratings_value"`
 	UpdatedAt time.Time `sql:"index:ix_ratings_updated_at"`
@@ -44,9 +44,9 @@ type Rating struct {
 // Similarity model
 type Similarity struct {
 	ID            int64
-	GameA         Game
+	GameA         *Game
 	GameAID       int64 `gorm:"column:game_a_id; foreignkey:game_a_id;associationforeignkey:GameA" sql:"index:ix_similarities_game_a_id"`
-	GameB         Game
+	GameB         *Game
 	GameBID       int64   `gorm:"column:game_b_id; foreignkey:game_b_id;associationforeignkey:GameB" sql:"index:ix_similarities_game_b_id"`
 	PearsonScore  float64 `sql:"index:ix_similarities_pearson_score"`
 	ScoreError    float64

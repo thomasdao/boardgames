@@ -1,12 +1,10 @@
-package boardgames_test
+package main_test
 
 import (
 	"testing"
 
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
-	_ "github.com/mattn/go-sqlite3"
 	"github.com/thomasdao/boardgames"
 )
 
@@ -40,31 +38,31 @@ func TestLoad(t *testing.T) {
 	}
 
 	db.AutoMigrate(
-		&boardgames.User{},
-		&boardgames.Game{},
-		&boardgames.Rating{},
-		&boardgames.Similarity{},
+		&main.User{},
+		&main.Game{},
+		&main.Rating{},
+		&main.Similarity{},
 	)
 
-	var user boardgames.User
+	var user main.User
 	err = db.First(&user).Error
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	var rating boardgames.Rating
+	var rating main.Rating
 	err = db.Preload("User").Preload("Game").First(&rating).Error
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	var sim boardgames.Similarity
+	var sim main.Similarity
 	err = db.Preload("GameA").Preload("GameB").First(&sim).Error
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	var game boardgames.Game
+	var game main.Game
 	err = db.First(&game).Error
 	if err != nil {
 		t.Fatal(err)
