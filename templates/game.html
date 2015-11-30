@@ -50,7 +50,7 @@
       <tr>
         <td>
           <b>Play Time</b><br/>
-          <p>{{ .Minplaytime }} to {{ .Maxplaytime }}</p>
+          <p>{{ .Minplaytime }} to {{ .Maxplaytime }} minutes</p>
         </td>
       </tr>
       <tr>
@@ -64,6 +64,15 @@
           <b>Description</b><br/>
           <p id="description">{{ .Description }}</p>
         </td>
+      </tr>
+    </table>
+
+    <table class="table">
+      <tr>
+        <td><a href="https://www.boardgamegeek.com/forums/thing/{{ .ID }}/" target="_blank"><b>Read Reviews on Board Game Geek</b></a></td>
+      </tr>
+      <tr>
+        <td><a href="{{ .AmazonURL }}" target="_blank"><b>Read Reviews on Amazon</b></a></td>
       </tr>
     </table>
   </div>
