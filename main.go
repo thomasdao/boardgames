@@ -19,6 +19,7 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", homeHandler)
 	r.HandleFunc("/game/{id:[0-9]+}", gameDetailHandler)
+	r.HandleFunc("/search", searchHandler)
 	http.Handle("/", r)
 
 	// For static contents

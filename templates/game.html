@@ -24,7 +24,13 @@
   <!-- Add your site or application content here -->
   {{ with .game }}
   <div class="container">
+    <br/>
     <div class="row">
+      <div class="col-md-12">
+        <input type="text" name="country" id="autocomplete" class="form-control" placeholder="Search..." />
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px;">
       <div class="col-md-12">
         <b style="font-size:1.5em;">
           {{ .Title }}
@@ -34,8 +40,7 @@
         data-readonly data-start="0" data-stop="10" data-step="0.5" data-value="{{ .Rating }}" />
 
         <span>{{ .Rating }}/10 ({{ .NumRatings }} ratings)</span>
-
-
+        <p></p>
         <img src="{{ .Thumbnail }}" class="center-block"/><br/>
       </div>
     </div>
@@ -69,10 +74,10 @@
 
     <table class="table">
       <tr>
-        <td><a href="https://www.boardgamegeek.com/forums/thing/{{ .ID }}/" target="_blank"><b>Read Reviews on Board Game Geek</b></a></td>
+        <td><a href="https://www.boardgamegeek.com/forums/thing/{{ .ID }}/"><b>Read Reviews on Board Game Geek</b></a></td>
       </tr>
       <tr>
-        <td><a href="{{ .AmazonURL }}" target="_blank"><b>Read Reviews on Amazon</b></a></td>
+        <td><a href="{{ .AmazonURL }}"><b>Read Reviews on Amazon</b></a></td>
       </tr>
     </table>
   </div>
@@ -144,6 +149,7 @@
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/vendor/bootstrap-rating.min.js"></script>
   <script src="/assets/js/vendor/readmore.min.js"></script>
+  <script src="/assets/js/vendor/jquery.autocomplete.min.js"></script>
   <script>
   $(document).ready(function(){
 
@@ -162,6 +168,22 @@
 
     $("#description").readmore({
       collapsedHeight: 80
+    });
+
+    $('#autocomplete').autocomplete({
+      serviceUrl: "/search",
+      paramName: "query",
+      deferRequestBy: 300,
+      minChars: 2,
+      onSelect: function (suggestion) {
+        window.location.href = "/game/" + suggestion.data;
+      },
+      transformResult: function(response) {
+        console.log(response);
+        return {
+            suggestions: JSON.parse(response)
+        };
+    }
     });
   });
   </script>

@@ -13,6 +13,7 @@ type User struct {
 type Game struct {
 	ID                  int64
 	Title               string `sql:"index:ix_games_title"`
+	LowerTitle          string `sql:"index:ix_games_lower_title"`
 	Description         string
 	Designer            string  `sql:"index:ix_games_designer"`
 	YearPublished       int64   `sql:"index:ix_games_year_published"`
